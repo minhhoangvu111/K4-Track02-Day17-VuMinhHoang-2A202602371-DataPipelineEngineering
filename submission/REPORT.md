@@ -1,6 +1,6 @@
 # K4-Track02-Day17 — Report cá nhân
 
-**Họ tên / MSSV:** Vũ Minh Hoàng / 2A202602371 | **Repo:** [K4-Track02-Day17-Data-Pipeline-Engineering](https://github.com/minhhoangvu111/K4-Track02-Day17-Data-Pipeline-Engineering) | **Commit:** xem lịch sử Git.
+**Họ tên / MSSV:** Vũ Minh Hoàng / 2A202602371 | **Repo:** [K4-Track02-Day17-Data-Pipeline-Engineering](https://github.com/minhhoangvu111/K4-Track02-Day17-VuMinhHoang-2A202602371-DataPipelineEngineering) | **Commit:** xem lịch sử Git.
 
 **AI đã dùng:** OpenAI Codex hỗ trợ đọc đề/mã, sửa lỗi, chạy kiểm tra và soạn báo cáo; người học cần tự rà soát và giải thích các thay đổi. **Nguồn khác:** Không có.
 
@@ -63,3 +63,7 @@ $ .\.venv\Scripts\python.exe -m scripts.parity
   [OK ] gold_feature_daily   lite 8630e04a61d1  dbt 8630e04a61d1
 RESULT: PARITY — both implementations agree
 ```
+
+## Bonus B1 — LLM cache và schema validation
+
+`pipeline/llm_label.py` cache kết quả theo SHA-256 nội dung vé + model + prompt version; output chỉ vào Gold sau khi parse và kiểm tra nhãn thuộc `bug/billing/other`. Output ngoài schema được lưu trong `llm_label_quarantine` và cache trạng thái invalid để replay không gọi lại model. Đổi prompt version tạo khóa cache mới và chủ động gán nhãn lại. Ước tính trước lượt đầu: 484 tokens, khoảng $0.0010 theo giá giả lập. Chạy zero-key `python -m scripts.bonus_llm` trên scratch copy: 11 vé được gán nhãn lượt đầu, 0 calls khi replay, output sai schema được quarantine, prompt mới gọi lại 11 lần; **BONUS PASS**.
