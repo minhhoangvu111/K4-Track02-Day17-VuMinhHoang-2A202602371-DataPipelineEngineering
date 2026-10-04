@@ -2,7 +2,7 @@
 
 **Họ tên / MSSV:** Vũ Minh Hoàng / 2A202602371 | **Repo:** [K4-Track02-Day17-Data-Pipeline-Engineering](https://github.com/minhhoangvu111/K4-Track02-Day17-Data-Pipeline-Engineering) | **Commit:** xem lịch sử Git.
 
-**AI đã dùng:** OpenAI Codex hỗ trợ đọc đề/mã, sửa lỗi, chạy kiểm tra và soạn báo cáo; tôi đã rà soát thay đổi. **Nguồn khác:** Không có.
+**AI đã dùng:** OpenAI Codex hỗ trợ đọc đề/mã, sửa lỗi, chạy kiểm tra và soạn báo cáo; người học cần tự rà soát và giải thích các thay đổi. **Nguồn khác:** Không có.
 
 ## 1. Ba lỗi
 
